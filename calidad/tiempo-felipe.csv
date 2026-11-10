@@ -1,0 +1,9 @@
+fecha,fase,hora_inicio,hora_fin,tiempo_interrupcion_min,tiempo_delta_min,tiempo_neto_min,actividad_descripcion,producto_asociado
+2026-11-09,Planificacion,09:00,10:15,10,75,65,Definición del alcance de E0 y estructuración del repositorio según metodología Trusted Data Lab,README.md
+2026-11-09,Analisis,11:00,12:00,0,60,60,Investigación de fuentes de datos SNIIM y APIs climáticas Open-Meteo para Manzanillo,docs/E0/propuesta.md
+2026-11-10,Analisis,08:30,09:20,5,50,45,Ejecución de la entrevista de campo semiestructurada con Don Aurelio Valencia (Pescadería Valencia),docs/E0/propuesta.md
+2026-11-10,Diseno,10:00,11:15,0,75,75,Diseño del contrato de datos de capa Bronce y formulación de las preguntas analíticas E1-E3,docs/E0/propuesta.md
+2026-11-10,Codificacion,11:30,13:10,10,100,90,Implementación del extractor de datos crudos y generador histórico de 36 periodos en Python,src/extractor_bronce.py
+2026-11-10,Diseno,14:00,14:45,0,45,45,Configuración de GitHub Actions para orquestación semanal y persistencia automatizada en Git,.github/workflows/extractor.yml
+2026-11-10,Pruebas,15:00,15:40,5,40,35,Validación local del pipeline capa Bronce: verificación de 108 filas (36 semanas x 3 especies) y metadatos JSON,data/bronce/precios_clima_historico_36p.csv
+2026-11-10,Post-Mortem,16:00,16:40,0,40,40,Elaboración de la ficha técnica de entrega E0 y consolidación de bitácoras de calidad PSP,docs/E0/ENTREGA.md

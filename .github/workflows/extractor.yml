@@ -1,0 +1,61 @@
+name: Extractor Bronce - Captura de Datos de Precios y Clima
+
+on:
+  schedule:
+    # Ejecución programada: Cada lunes a las 06:00 UTC (00:00 hora de Colima / CDMX)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    # Permite la ejecución manual desde la pestaña Actions de GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  run-extractor-bronce:
+    name: Ingesta Capa Bronce (SNIIM & Clima Manzanillo)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Entorno de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar Dependencias de Ingeniería de Datos
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Ejecutar Extractor de Capa Bronce
+        run: |
+          python src/extractor_bronce.py
+
+      - name: Validar Integridad de Datos en Capa Bronce
+        run: |
+          echo "=== Contenido generado en data/bronce/ ==="
+          ls -la data/bronce/
+          python -c "
+          import pandas as pd
+          df = pd.read_csv('data/bronce/precios_clima_historico_36p.csv')
+          print(f'Total de registros cargados: {len(df)}')
+          assert len(df) >= 36, f'Error: Se esperaban al menos 36 periodos, se encontraron {len(df)}'
+          print('Validación de volumen mínimo de periodos superada exitosamente.')
+          "
+
+      - name: Persistir Nuevos Datos en el Repositorio (Git Auto-Commit)
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/bronce/
+          if git diff --staged --quiet; then
+            echo "No se detectaron cambios nuevos en los datos de la capa bronce."
+          else
+            git commit -m "chore(data-lake): actualización programada de capa bronce [skip ci]"
+            git push origin main || git push
+          fi

@@ -1,0 +1,63 @@
+{
+    "pipeline_name": "extractor_bronce_valencia",
+    "version": "1.0.0",
+    "timestamp_utc": "2026-11-10T19:17:53Z",
+    "total_registros": 108,
+    "total_periodos_semanales": 36,
+    "rango_fechas": {
+        "fecha_minima": "2025-06-02",
+        "fecha_maxima": "2026-02-02"
+    },
+    "catalogo_especies": [
+        "Filete de Pez Vela",
+        "Huachinango del Pacífico",
+        "Mojarra Fresca Entera"
+    ],
+    "metricas_resumen": {
+        "precio_frecuente_min": 74.38,
+        "precio_frecuente_max": 241.14,
+        "precio_frecuente_promedio": 128.51
+    },
+    "fuentes_consultadas": [
+        {
+            "nombre": "SNIIM - Sistema Nacional de Información e Integración de Mercados",
+            "entidad": "Secretaría de Economía",
+            "formato": "CSV/HTML",
+            "tipo_dato": "Precios mayoristas semanales"
+        },
+        {
+            "nombre": "Open-Meteo Marine & Historical Weather API",
+            "coordenadas": "19.0522° N, -104.3158° W (Manzanillo)",
+            "formato": "REST JSON",
+            "tipo_dato": "Viento, Oleaje, Precipitación"
+        }
+    ],
+    "contrato_datos": {
+        "schema_columns": [
+            "periodo_id",
+            "fecha_inicio_semana",
+            "fecha_fin_semana",
+            "mes",
+            "semana_del_anio",
+            "temporada",
+            "producto_foco",
+            "variedad_especie",
+            "origen_abasto",
+            "mercado_referencia",
+            "precio_minimo_kg",
+            "precio_maximo_kg",
+            "precio_frecuente_kg",
+            "disponibilidad_volumen_kg",
+            "precipitacion_acumulada_mm",
+            "velocidad_viento_kmh",
+            "rafagas_max_kmh",
+            "altura_oleaje_m",
+            "dias_cierre_puerto",
+            "alerta_meteorologica",
+            "fuente_primaria_precio",
+            "fuente_primaria_clima",
+            "timestamp_ingesta_utc"
+        ],
+        "estado_calidad": "VALIDADO_E0"
+    }
+}

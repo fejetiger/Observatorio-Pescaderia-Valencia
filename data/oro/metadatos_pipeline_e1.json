@@ -1,0 +1,60 @@
+{
+    "pipeline_name": "pipeline_plata_oro_valencia",
+    "entrega": "E1 - Trusted Data Lab",
+    "timestamp_ejecucion_utc": "2026-11-13T19:23:00Z",
+    "estado_puerta_calidad": "VALIDACION_PANDERA_APROBADA",
+    "metricas_flujo": {
+        "total_registros_evaluados": 111,
+        "registros_aprobados_plata": 108,
+        "registros_aislados_cuarentena": 3,
+        "tasa_rechazo_pct": 2.7,
+        "filas_agregadas_oro": 27
+    },
+    "detalles_cuarentena": [
+        {
+            "periodo_id": 991,
+            "producto": "Salmón Atlántico Importado",
+            "motivo_rechazo": "Producto no autorizado: 'Salmón Atlántico Importado'"
+        },
+        {
+            "periodo_id": 992,
+            "producto": "Huachinango del Pacífico",
+            "motivo_rechazo": "precio_minimo_kg inválido (-45.0); precio_frecuente_kg inválido (-20.0)"
+        },
+        {
+            "periodo_id": 993,
+            "producto": "Mojarra Fresca Entera",
+            "motivo_rechazo": "Inconsistencia lógica de precios: min(120.0) <= freq(95.0) <= max(80.0); velocidad_viento_kmh fuera de rango físico: 480.0"
+        }
+    ],
+    "estadisticas_plata": {
+        "precio_minimo_observado": 74.38,
+        "precio_maximo_observado": 241.14,
+        "precio_promedio_general": 128.52,
+        "valores_nulos_remanentes": 0
+    },
+    "contrato_calidad": {
+        "framework": "Pandera 0.20+",
+        "columnas_validadas": [
+            "periodo_id",
+            "fecha_inicio_semana",
+            "fecha_fin_semana",
+            "mes",
+            "semana_del_anio",
+            "temporada",
+            "producto_foco",
+            "precio_minimo_kg",
+            "precio_maximo_kg",
+            "precio_frecuente_kg",
+            "disponibilidad_volumen_kg",
+            "precipitacion_acumulada_mm",
+            "velocidad_viento_kmh",
+            "rafagas_max_kmh",
+            "altura_oleaje_m",
+            "dias_cierre_puerto",
+            "alerta_meteorologica"
+        ],
+        "tratamiento_faltantes": "Interpolacion temporal (MCAR) y Mediana condicional (MAR)",
+        "tratamiento_atipicos": "IQR estratificado por (producto, temporada) preservando senal de Cuaresma"
+    }
+}

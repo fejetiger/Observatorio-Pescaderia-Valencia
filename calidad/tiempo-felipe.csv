@@ -7,3 +7,10 @@ fecha,fase,hora_inicio,hora_fin,tiempo_interrupcion_min,tiempo_delta_min,tiempo_
 2026-11-10,Diseno,14:00,14:45,0,45,45,Configuración de GitHub Actions para orquestación semanal y persistencia automatizada en Git,.github/workflows/extractor.yml
 2026-11-10,Pruebas,15:00,15:40,5,40,35,Validación local del pipeline capa Bronce: verificación de 108 filas (36 semanas x 3 especies) y metadatos JSON,data/bronce/precios_clima_historico_36p.csv
 2026-11-10,Post-Mortem,16:00,16:40,0,40,40,Elaboración de la ficha técnica de entrega E0 y consolidación de bitácoras de calidad PSP,docs/E0/ENTREGA.md
+2026-11-12,Planificacion,09:00,10:00,5,60,55,Planificación de la etapa E1: definición de la arquitectura de calidad Medallion y estrategia de Cuarentena,docs/E1/ENTREGA.md
+2026-11-12,Diseno,10:30,11:45,5,75,70,Diseño del contrato de datos formal con Pandera y modelado matemático del IQR estratificado,docs/relatoria-E1.md
+2026-11-12,Codificacion,12:00,13:30,10,90,80,Implementación de la ingesta, resolución de heterogeneidad y puerta de calidad en src/pipeline_plata_oro.py,src/pipeline_plata_oro.py
+2026-11-13,Codificacion,08:30,10:15,10,105,95,Desarrollo del módulo de preprocesamiento estadístico (imputación MCAR/MAR, escalamiento MinMax/ZScore y Capa Oro),src/pipeline_plata_oro.py
+2026-11-13,Pruebas,10:30,11:25,5,55,50,Validación de aislamiento en Cuarentena, verificación de aserciones de Pandera y auditoría de nulos en Plata,data/cuarentena/registros_invalidos.csv
+2026-11-13,Codificacion,11:30,12:40,5,70,65,Construcción del notebook documentado docs/E1/limpieza.ipynb y actualización del workflow CI/CD,.github/workflows/extractor.yml
+2026-11-13,Post-Mortem,14:00,15:20,5,80,75,Elaboración de la relatoría técnica docs/relatoria-E1.md y consolidación de la ficha técnica docs/E1/ENTREGA.md,docs/E1/ENTREGA.md

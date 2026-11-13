@@ -2,3 +2,7 @@ requests>=2.31.0
 pandas>=2.1.0
 numpy>=1.26.0
 python-dateutil>=2.8.2
+scikit-learn>=1.4.0
+pandera>=0.20.0
+jupyter>=1.0.0
+nbformat>=5.9.0

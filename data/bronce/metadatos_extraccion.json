@@ -1,7 +1,7 @@
 {
     "pipeline_name": "extractor_bronce_valencia",
     "version": "1.0.0",
-    "timestamp_utc": "2026-11-10T19:17:53Z",
+    "timestamp_utc": "2026-11-16T15:10:54Z",
     "total_registros": 108,
     "total_periodos_semanales": 36,
     "rango_fechas": {

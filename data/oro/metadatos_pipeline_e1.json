@@ -1,7 +1,7 @@
 {
     "pipeline_name": "pipeline_plata_oro_valencia",
     "entrega": "E1 - Trusted Data Lab",
-    "timestamp_ejecucion_utc": "2026-11-13T19:23:00Z",
+    "timestamp_ejecucion_utc": "2026-11-16T15:10:55Z",
     "estado_puerta_calidad": "VALIDACION_PANDERA_APROBADA",
     "metricas_flujo": {
         "total_registros_evaluados": 111,
